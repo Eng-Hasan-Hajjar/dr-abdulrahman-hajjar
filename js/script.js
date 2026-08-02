@@ -148,6 +148,14 @@
     });
   });
 
+  /* brand/logo icon fallback (until images/logo.svg is added) */
+  document.querySelectorAll('.brand-icon img').forEach(function(img){
+    img.addEventListener('error', function(){
+      var wrap = img.closest('.brand-icon');
+      if(wrap){ wrap.classList.add('icon-missing'); }
+    }, {once:true});
+  });
+
   /* work-card image fallback (missing images -> graceful placeholder) */
   document.querySelectorAll('.work-card__media img').forEach(function(img){
     img.addEventListener('error', function(){
