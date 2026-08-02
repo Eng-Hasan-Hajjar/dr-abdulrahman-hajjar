@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('site-theme'); if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>تواصل معي | د. عبد الرحمن حجار</title>
 <meta name="description" content="تواصل مع د. عبد الرحمن حجار عبر الهاتف أو وسائل التواصل الاجتماعي">
@@ -29,6 +30,10 @@
       <li><a href="faq.html">الأسئلة الشائعة</a></li>
       <li><a href="contact.html" class="nav__cta is-current" aria-current="page">تواصل معي</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="تبديل بين الوضع الداكن والفاتح" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
     <button class="nav__toggle" id="navToggle" aria-label="فتح قائمة التنقل" aria-expanded="false" aria-controls="navLinks">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -37,10 +42,7 @@
 
 <main>
 
-  <section class="page-banner">
-    <span class="brand-icon page-banner__medallion" aria-hidden="true">
-      <img src="images/logo.svg" alt="" loading="eager">
-    </span>
+  <section class="page-banner page-banner--photo" style="background-image:url('https://images.unsplash.com/photo-1777269749032-d8d458ae594d?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');">
     <div class="container">
       <p class="breadcrumb reveal"><a href="index.html">الرئيسية</a> / <span>تواصل معي</span></p>
       <h1 class="reveal">للاستفسار أو التواصل</h1>
@@ -54,39 +56,61 @@
         <div class="contact__intro reveal">
           <p class="eyebrow">تواصل معي</p>
           <h2>وسائل التواصل</h2>
-          <p>يمكنكم التواصل مباشرة عبر واتساب أو حسابات التواصل الاجتماعي أدناه.</p>
-          <a href="#" class="btn btn--primary" style="margin-top:28px;">
+          <p>يمكنكم التواصل مباشرة عبر واتساب أو حساب فيسبوك، أو تعبئة النموذج المجاور وسيتم تحويل رسالتكم مباشرة إلى واتساب.</p>
+
+          <a href="https://wa.me/963959145239" target="_blank" rel="noopener" class="btn btn--whatsapp" style="margin-top:26px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             راسلني عبر واتساب
           </a>
-          <p class="contact__note">بيانات التواصل أدناه مؤقتة حاليًا، وسيتم استبدالها ببيانات الدكتور عبد الرحمن الفعلية لاحقًا.</p>
+
+          <div class="contact__free">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s-8-4.5-8-11.2C4 6.6 7.4 3.5 11 4.2c.7.1 1.4.5 2 1 .6-.5 1.3-.9 2-1 3.6-.7 7 2.4 7 6.6C22 17.5 14 22 12 22z" opacity="0"/><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5"/></svg>
+            <p><strong>استشارات أولية مجانية عبر واتساب</strong> — رسالة صوتية أو مكتوبة، أيهما يناسبكم.</p>
+          </div>
+
+          <ul class="contact__list" style="margin-top:26px;">
+            <li>
+              <a href="https://wa.me/963959145239" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.2a2 2 0 0 1 2.11-.45c.86.3 1.75.51 2.65.63A2 2 0 0 1 22 16.92z"/></svg>
+                هاتف / واتساب — 959 145 239 963+
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/share/1D7tY7FUN4/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.2L18 12h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                صفحة فيسبوك
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="contact__list reveal">
-          <li>
-            <span class="contact__static">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.2a2 2 0 0 1 2.11-.45c.86.3 1.75.51 2.65.63A2 2 0 0 1 22 16.92z"/></svg>
-              هاتف / واتساب — [ سيتم إضافة الرقم هنا ]
-            </span>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>
-              انستغرام — [ رابط الحساب ]
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.2L18 12h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              فيسبوك — [ رابط الحساب ]
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              لينكدإن — [ رابط الحساب ]
-            </a>
-          </li>
-        </ul>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-field">
+            <label for="cfName">الاسم</label>
+            <input type="text" id="cfName" name="name" placeholder="اسمك الكامل" required>
+          </div>
+          <div class="form-field">
+            <label for="cfPhone">رقم للتواصل (اختياري)</label>
+            <input type="tel" id="cfPhone" name="phone" placeholder="مثال: 09xxxxxxxx">
+          </div>
+          <div class="form-field">
+            <label for="cfMessage">رسالتك أو استفسارك</label>
+            <textarea id="cfMessage" name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+          </div>
+          <p class="form-note">عند الإرسال سيتم فتح واتساب مع تعبئة رسالتك تلقائيًا — يمكنكم أيضًا إرسال تسجيل صوتي مباشرة من واتساب.</p>
+          <button type="submit" class="btn btn--whatsapp btn--block">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            إرسال عبر واتساب
+          </button>
+        </form>
+      </div>
+
+      <div class="map-embed reveal">
+        <span class="map-embed__label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          حلب، سوريا — جامعة حلب
+        </span>
+        <iframe src="https://www.google.com/maps?q=University+of+Aleppo,+Aleppo,+Syria&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="خريطة الموقع - جامعة حلب"></iframe>
       </div>
     </div>
   </section>
@@ -107,12 +131,25 @@
       <a href="works.html">الأعمال</a>
       <a href="faq.html">أسئلة شائعة</a>
     </div>
+    <div class="site-footer__social">
+      <a href="https://www.facebook.com/share/1D7tY7FUN4/" target="_blank" rel="noopener" aria-label="صفحة فيسبوك">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.2L18 12h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://wa.me/963959145239" target="_blank" rel="noopener" aria-label="واتساب">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </a>
+    </div>
   </div>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="العودة إلى الأعلى">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
+
+<a class="wa-float" href="https://wa.me/963959145239" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+  <span class="wa-float__ping" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</a>
 
 <script src="js/script.js"></script>
 </body>

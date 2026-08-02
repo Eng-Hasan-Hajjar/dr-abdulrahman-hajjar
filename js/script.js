@@ -170,7 +170,7 @@
   var toTop = document.getElementById('toTop');
   window.addEventListener('scroll', function(){
     if(header){
-      header.style.background = window.scrollY > 40 ? 'rgba(10,31,46,0.95)' : 'rgba(10,31,46,0.86)';
+      header.classList.toggle('is-scrolled', window.scrollY > 40);
     }
     if(toTop){
       if(window.scrollY > 600){ toTop.classList.add('is-visible'); }
@@ -180,6 +180,38 @@
   if(toTop){
     toTop.addEventListener('click', function(){
       window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'});
+    });
+  }
+
+  /* theme toggle (dark / light) */
+  var themeToggle = document.getElementById('themeToggle');
+  if(themeToggle){
+    themeToggle.addEventListener('click', function(){
+      var current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = current === 'light' ? 'dark' : 'light';
+      if(next === 'light'){ document.documentElement.setAttribute('data-theme','light'); }
+      else { document.documentElement.removeAttribute('data-theme'); }
+      try{ localStorage.setItem('site-theme', next); }catch(e){}
+      themeToggle.setAttribute('aria-pressed', String(next === 'light'));
+    });
+  }
+
+  /* contact form -> WhatsApp deep link */
+  var contactForm = document.getElementById('contactForm');
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = (document.getElementById('cfName') || {}).value || '';
+      var phone = (document.getElementById('cfPhone') || {}).value || '';
+      var message = (document.getElementById('cfMessage') || {}).value || '';
+      var lines = [
+        'مرحبًا، أرغب بالتواصل بخصوص استشارة:',
+        'الاسم: ' + (name || '—'),
+        phone ? ('رقم للتواصل: ' + phone) : null,
+        'الرسالة: ' + (message || '—')
+      ].filter(Boolean);
+      var text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/963959145239?text=' + text, '_blank', 'noopener');
     });
   }
 })();
